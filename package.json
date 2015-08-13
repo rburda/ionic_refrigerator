@@ -30,7 +30,7 @@
     "android"
   ],
   "browser": {
-    "ionic": "./www/lib/ionic/js/ionic.js",
+    "ionic": "./www/lib/ionic/js/ionic.bundle.js",
     "angular": "./www/lib/ionic/js/angular/angular.js" 
   }, 
   "browserify": { 

@@ -14,7 +14,7 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass', 'lint', 'browserify']);
+gulp.task('default', ['sass', 'lint']);
 
 gulp.task('lint', function() { 
  gulp.src(['./www/js/**/*.js']) 
@@ -25,20 +25,8 @@ gulp.task('lint', function() {
 
 gulp.task('browserify', function() { 
  return browserify('./www/js/app.js', {debug: true})
-  .on('error', function(err){
-    gutil.log("after after browserify");
-    gutil.log(err);
-  }) 
   .bundle() 
-  .on('error', function(err){
-    gutil.log("after bundle");
-    gutil.log(err);
-  }) 
   .pipe(vinylSource('bundle.js')) 
-  .on('error', function(err){
-    gutil.log("after vinylSource");
-    gutil.log(err);
-  }) 
   .pipe(gulp.dest('./www/dist')); 
 });
 
